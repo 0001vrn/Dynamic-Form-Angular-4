@@ -25,5 +25,13 @@
         "controlType": "textbox",
         "type": "email",
         "order": 2
+    },
+    {
+        "key": "Gender",
+        "label": "Male",
+        "controlType": "radio",
+        "type": "radio",
+        "order": 4
     }
+
 ]

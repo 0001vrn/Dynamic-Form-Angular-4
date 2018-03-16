@@ -1,6 +1,7 @@
 import { Component }       from '@angular/core';
 
 import { QuestionService } from './question.service';
+import { QuestionBase } from './question-base';
 
 @Component({
   selector: 'app-root',
@@ -17,5 +18,13 @@ export class AppComponent {
 
   constructor(service: QuestionService) {
     this.questions = service.getQuestions();
+    //service.getQuestionsFromJSON().subscribe((res) => {
+      //console.log(res);
+      // res.forEach((x : QuestionBase<any>) => {
+      //   this.questions.push(x);
+      // });
+      //this.questions = res;
+      //console.log(this.questions);
+    //});
   }
 }

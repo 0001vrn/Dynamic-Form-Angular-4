@@ -5,6 +5,25 @@
 
     <input *ngSwitchCase="'textbox'" [formControlName]="question.key"
             [id]="question.key" [type]="question.type">
+    
+    <div *ngSwitchCase="'radio'">
+      <label *ngFor="let option of question.options">
+        <input
+          type="radio"
+          [id]="question.key"
+          [name]="question.key"
+          [formControlName]="question.key"
+          [value]="option.value"> {{option.key}}
+      </label>
+    </div>
+
+    <input  [checked]="question.value == true"
+            [formControlName]="question.key"
+            *ngSwitchCase="'checkbox'" 
+            [id]="question.key" 
+            type="checkbox"
+            [value]="question.value"
+            (change)="question.value = !question.value">
 
     <select [id]="question.key" *ngSwitchCase="'dropdown'" [formControlName]="question.key">
       <option *ngFor="let opt of question.options" [value]="opt.key">{{opt.value}}</option>
