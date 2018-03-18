@@ -93,7 +93,35 @@ export class QuestionService {
       
       
     ];
+    let n=50;
+    for(let i=1;i<n+1;i++){
+      let rq = new RadioQuestion({
+        key: `Sample ${i}`,
+        label: `Sample Question ${i}`,
+        value:'value 1',
+        controlType: "radio",
+        type: "radio",
+        options: [
+          { key: "option 1", value: 'value 1'},
+          { key: "option 2", value: 'value 2'},
+          { key: "option 3", value: 'value 3'},
+          { key: "option 4", value: 'value 4'}
+        ],
+        order: i
+
+      });
+
+      questions.push(rq);
+    }
 
     return questions.sort((a, b) => a.order - b.order);
   }
+  getRadioQuestions(n: number){
+     
+    for(let i=0;i<n;i++){
+
+    }
+  }
 }
+
+
